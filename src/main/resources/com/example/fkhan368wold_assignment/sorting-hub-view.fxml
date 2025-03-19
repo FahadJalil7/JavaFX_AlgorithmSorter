@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.fkhan368wold_assignment.SortingHubController"
+      spacing="10"
+      style="-fx-background-color: white;">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+
+    <Pane fx:id="visualizationPane"
+          prefWidth="800"
+          prefHeight="400"
+          style="-fx-background-color: lightgray;"/>
+
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <VBox spacing="5">
+            <Label text="Algorithm"/>
+            <ComboBox fx:id="algorithmComboBox"
+                      prefWidth="150"/>
+        </VBox>
+
+
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Array Size"/>
+            <HBox spacing="5" alignment="CENTER">
+                <Label text="32"/>
+                <Slider fx:id="arraySizeSlider"
+                        min="32"
+                        max="128"
+                        value="48"
+                        showTickLabels="true"
+                        showTickMarks="true"
+                        majorTickUnit="16"
+                        snapToTicks="true"
+                        HBox.hgrow="ALWAYS"/>
+                <Label text="128"/>
+            </HBox>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Time delay"/>
+            <HBox spacing="5" alignment="CENTER">
+                <Label text="0"/>
+                <Slider fx:id="timeDelaySlider"
+                        min="0"
+                        max="1000"
+                        value="200"
+                        showTickLabels="true"
+                        showTickMarks="true"
+                        majorTickUnit="200"/>
+                <Label text="1000"/>
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Sort"
+                onAction="#handleSort"
+                prefWidth="100"/>
+        <Button text="Shuffle"
+                onAction="#handleShuffle"
+                prefWidth="100"/>
+        <Button text="Reverse"
+                onAction="#handleReverse"
+                prefWidth="100"/>
+    </HBox>
+</VBox>
